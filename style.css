@@ -1,0 +1,14 @@
+body {
+    background: #333 url("url") center center;
+    color: brown;
+}
+
+#container {
+    box-sizing: border-box;
+    width: 400px;
+    margin: 40px auto 0;
+    background: lightgreen;
+    padding: 30px;
+}
+
+
