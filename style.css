@@ -1,14 +1,46 @@
 body {
-    background: #333 url("url") center center;
-    color: brown;
+    background: #333;
+    background-image: url("images/dollar.jpg");
+    color: #ffffcc;
+    font-family: 'Acme', sans-serif;
 }
 
 #container {
-    box-sizing: border-box;
     width: 400px;
-    margin: 40px auto 0;
-    background: lightgreen;
+    margin: 60px auto 0;
+    background: #224A15;
     padding: 30px;
+    border-radius: 25px;
+    -moz-box-shadow: inset 0 0 20px #777777;
+    -webkit-box-shadow: inset 0 0 20px #777777;
+    box-shadow: inset 0 0 20px #777777
 }
 
+h1 {
+    text-align: center;
+    color: #4BFE0E;
+}
 
+input {
+    width: 60px;
+}
+
+button {
+    background: darkgreen;
+    width: 160px;
+    height: 40px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 25px;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+button:hover {
+    background-color: white; 
+    color: purple;
+  }
+
+.results {
+    font-size: 20px;
+    color: #4d0000;
+}
