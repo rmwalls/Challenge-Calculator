@@ -2,7 +2,7 @@ body {
     background: #333;
     background-image: url("images/dollar.jpg");
     color: #ffffcc;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Muli', sans-serif;
 }
 
 #container {
@@ -42,5 +42,5 @@ button:hover {
 
 .results {
     font-size: 20px;
-    color: #4d0000;
+    color: #ff9933;
 }

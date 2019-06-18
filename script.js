@@ -1,8 +1,8 @@
 // need to 
-//      validate input, is there input, is it a positive number?
+//      validate input, is there input, is it a positive number?, make sure it isn't text
 //      default number of people to split the bill by if not entered
 //      need to clear input fields
-//      add more comments
+//      
 
 //declare functions as page loads to make sure that the elements are shown and hidden
 $(document).ready(function () {    
@@ -26,6 +26,7 @@ $(document).ready(function () {
         numberSplittingCheck=document.getElementById("numberSplittingCheck-input").value;
         amountEach = parseFloat(grandTotal / numberSplittingCheck).toFixed(2);
         validateData();
+        document.getElementById("form").reset(); //Clear form for next entry
         //write back to the page
         document.querySelector("#totalBill").innerHTML="<br>" + "The Bill is $" + "<strong>" + billTotal + "</strong>";
         document.querySelector("#tipAmount").innerHTML="The Total Tip is $" + "<strong>" + tipAmount + "</strong>";
