@@ -1,7 +1,8 @@
 // need to 
-//      validate input
+//      validate input, is there input, is it a positive number?
 //      default number of people to split the bill by if not entered
-// 
+//      need to clear input fields
+//      add more comments
 
 //declare functions as page loads to make sure that the elements are shown and hidden
 $(document).ready(function () {    
