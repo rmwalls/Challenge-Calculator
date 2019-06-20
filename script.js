@@ -1,6 +1,6 @@
 // need to 
 //      default number of people to split the bill by if not entered
-//      
+//      need logic for "person" vs. "people"
 
 // make sure document is ready
 $(document).ready(function () {    
