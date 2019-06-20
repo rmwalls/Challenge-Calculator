@@ -1,6 +1,6 @@
 // need to 
 //      default number of people to split the bill by if not entered
-//      need logic for "person" vs. "people"
+//      
 
 // make sure document is ready
 $(document).ready(function () {    
@@ -10,8 +10,7 @@ $(document).ready(function () {
     var tipPercentage;
     var tipAmount;
     var grandTotal;
-    var numberSplittingCheck=1;
-	console.log("initial val of NSC is " + numberSplittingCheck);
+    var numberSplittingCheck=parseFloat("1");
     var amountEach;
     
     //on button click do the math and display the results
@@ -23,11 +22,15 @@ $(document).ready(function () {
         tipPercentage=document.getElementById("tipPercentage-input").value;
         tipAmount=parseFloat((tipPercentage - 1) * billTotal).toFixed(2);
         grandTotal = parseFloat(billTotal * tipPercentage).toFixed(2);
-        numberSplittingCheck=document.getElementById("numberSplittingCheck-input").value;
-	console.log("after click NSC is " + numberSplittingCheck);
+        numberSplittingCheck=parseFloat(document.getElementById("numberSplittingCheck-input").value);
+	validateNSC();
+	if (numberSplittingCheck === 1) {
+	   var resultText = "person";
+	} else {
+	   var resultText = "people";
+	}
         amountEach = parseFloat(grandTotal / numberSplittingCheck).toFixed(2);
 	validateBillData();
-	validateNSC();
         
         // unhide results in case Reset has been clicked
 	$("#totalBill").show();
@@ -40,7 +43,7 @@ $(document).ready(function () {
         document.querySelector("#totalBill").innerHTML="<br>" + "The Bill is $" + "<strong>" + billTotal + "</strong>";
         document.querySelector("#tipAmount").innerHTML="The Total Tip is $" + "<strong>" + tipAmount + "</strong>";
         document.querySelector("#totalTotal").innerHTML="Making the Grand Total " + "<strong>" + "$" + grandTotal + "</strong>";
-        document.querySelector("#numberSplittingCheck").innerHTML="Which, split by " + "<strong>" + numberSplittingCheck + "</strong>" + " people";
+        document.querySelector("#numberSplittingCheck").innerHTML="Which, split by " + "<strong>" + numberSplittingCheck + "</strong>" + " " + resultText;
         document.querySelector("#amountEach").innerHTML="is $" + "<strong>" + amountEach + "</strong>" + " per person";
  
     }) //end myButton
@@ -58,16 +61,13 @@ $(document).ready(function () {
     function validateBillData() {
                 if (billTotal == 0) { //if billtotal is zero 
                 alert("Please enter a positive number as the bill total. Calculation invalid.");
-                console.log("if billTotal is " + billTotal);
                 document.getElementById("form").reset(); //Clear form for next entry
                 return false;
                 } else if (billTotal.includes("-"))  { // if billTotal is negative
                         alert("Please enter a positive number as the bill total. Calculation invalid.");
-                        console.log("else if billTotal is " + billTotal);
                         return false;
                 } else if (isNaN(billTotal)) { // if billTotal is not a number
                         alert("Bill amount can not be blank. Calculation invalid.");
-                        console.log("2nd else if billTotal is " + billTotal);
                         return false;
                 } else {
                         return;
@@ -76,12 +76,11 @@ $(document).ready(function () {
        
 	function validateNSC() {
 	        if (numberSplittingCheck <= 0) { //if less than 1, set to 1 
-                numberSplittingCheck=1;
+                numberSplittingCheck = 1
                 console.log("in the if for NSC " + numberSplittingCheck);
                 return;
 	        } else if (isNaN(numberSplittingCheck)) {
-                numberSplittingCheck=1;
-                console.log("in the elseif for NSC " + numberSplittingCheck);
+                numberSplittingCheck=parseFloat("1");
                 return;
                 } else {
                 return;
