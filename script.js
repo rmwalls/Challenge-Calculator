@@ -1,9 +1,8 @@
 // need to 
-//      validate input, is there input, is it a positive number?, make sure it isn't text
 //      default number of people to split the bill by if not entered
 //      
 
-//declare functions as page loads to make sure that the elements are shown and hidden
+// make sure document is ready
 $(document).ready(function () {    
     
     //Declare needed variables, initiate billTotal to 0, numberSplittingCheck to 1
@@ -26,16 +25,16 @@ $(document).ready(function () {
         numberSplittingCheck=document.getElementById("numberSplittingCheck-input").value;
 	console.log("after click NSC is " + numberSplittingCheck);
         amountEach = parseFloat(grandTotal / numberSplittingCheck).toFixed(2);
-	console.log("amountEach is " + amountEach);
-        validateBillData();
+	validateBillData();
 	validateNSC();
         //document.getElementById("form").reset(); //Clear form for next entry
-        //write back to the page
+        // unhide results in case Reset has been clicked
 	$("#totalBill").show();
 	$("#tipAmount").show();
 	$("#totalTotal").show();
 	$("#numberSplittingCheck").show();
-	$("#amountEach").show();
+        $("#amountEach").show();
+        //write back results to the page
         document.querySelector("#totalBill").innerHTML="<br>" + "The Bill is $" + "<strong>" + billTotal + "</strong>";
         document.querySelector("#tipAmount").innerHTML="The Total Tip is $" + "<strong>" + tipAmount + "</strong>";
         document.querySelector("#totalTotal").innerHTML="Making the Grand Total " + "<strong>" + "$" + grandTotal + "</strong>";
@@ -46,24 +45,32 @@ $(document).ready(function () {
 
 	const resetButton = document.querySelector("#reset"); 
 	resetButton.addEventListener('click', () => {
-	$("#totalBill").hide();
-	$("#tipAmount").hide();
-	$("#totalTotal").hide();
-	$("#numberSplittingCheck").hide();
-	$("#amountEach").hide();
-	return;
+                $("#totalBill").hide();
+                $("#tipAmount").hide();
+                $("#totalTotal").hide();
+                $("#numberSplittingCheck").hide();
+                $("#amountEach").hide();
+                return;
 	}) // end resetButton
 
-    function validateBillData(){
-        if (billTotal == 0 || billTotal.includes("-")) { //if billtotal is zero or has a negative number
-          alert("Please enter a positive number as the bill total");
-	  console.log("in the if for billdata");
-          return false;
-        } else {
-	  return true;
-	} //end if-else
+    function validateBillData() {
+                if (billTotal == 0) { //if billtotal is zero 
+                alert("Please enter a positive number as the bill total. Calculation invalid.");
+                console.log("if billTotal is " + billTotal);
+                return false;
+                } else if (billTotal.includes("-"))  {
+                        alert("Please enter a positive number as the bill total. Calculation invalid.");
+                        console.log("else if billTotal is " + billTotal);
+                        return false;
+                } else if (isNaN(billTotal)) {
+                        alert("Bill amount can not be blank. Calculation invalid.");
+                        console.log("2nd else if billTotal is " + billTotal);
+                        return false;
+                } else {
+                        return;
+                } //end if stmnts
         } //end valBill
-
+       
 	function validateNSC() {
 	if (numberSplittingCheck == "" || numberSplittingCheck <= 0) { //default to 1 if blank or less than 1
         numberSplittingCheck=1;
