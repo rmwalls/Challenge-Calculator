@@ -17,7 +17,8 @@ $(document).ready(function () {
     //on button click do the math and display the results
     const myButton = document.querySelector("#calculate"); 
 
-    myButton.addEventListener('click', () => {    // calculate the numbers
+    // calculate the numbers
+    myButton.addEventListener('click', () => {    
         billTotal=parseFloat(document.getElementById("billTotal-input").value).toFixed(2);
         tipPercentage=document.getElementById("tipPercentage-input").value;
         tipAmount=parseFloat((tipPercentage - 1) * billTotal).toFixed(2);
@@ -27,14 +28,15 @@ $(document).ready(function () {
         amountEach = parseFloat(grandTotal / numberSplittingCheck).toFixed(2);
 	validateBillData();
 	validateNSC();
-        //document.getElementById("form").reset(); //Clear form for next entry
+        
         // unhide results in case Reset has been clicked
 	$("#totalBill").show();
 	$("#tipAmount").show();
 	$("#totalTotal").show();
 	$("#numberSplittingCheck").show();
         $("#amountEach").show();
-        //write back results to the page
+
+        //write results back to the page
         document.querySelector("#totalBill").innerHTML="<br>" + "The Bill is $" + "<strong>" + billTotal + "</strong>";
         document.querySelector("#tipAmount").innerHTML="The Total Tip is $" + "<strong>" + tipAmount + "</strong>";
         document.querySelector("#totalTotal").innerHTML="Making the Grand Total " + "<strong>" + "$" + grandTotal + "</strong>";
@@ -57,12 +59,13 @@ $(document).ready(function () {
                 if (billTotal == 0) { //if billtotal is zero 
                 alert("Please enter a positive number as the bill total. Calculation invalid.");
                 console.log("if billTotal is " + billTotal);
+                document.getElementById("form").reset(); //Clear form for next entry
                 return false;
-                } else if (billTotal.includes("-"))  {
+                } else if (billTotal.includes("-"))  { // if billTotal is negative
                         alert("Please enter a positive number as the bill total. Calculation invalid.");
                         console.log("else if billTotal is " + billTotal);
                         return false;
-                } else if (isNaN(billTotal)) {
+                } else if (isNaN(billTotal)) { // if billTotal is not a number
                         alert("Bill amount can not be blank. Calculation invalid.");
                         console.log("2nd else if billTotal is " + billTotal);
                         return false;
@@ -72,12 +75,17 @@ $(document).ready(function () {
         } //end valBill
        
 	function validateNSC() {
-	if (numberSplittingCheck == "" || numberSplittingCheck <= 0) { //default to 1 if blank or less than 1
-        numberSplittingCheck=1;
-	console.log("in the if for NSC " + numberSplittingCheck);
-	} else {
-	return;
-	} //end if-else
+	        if (numberSplittingCheck <= 0) { //if less than 1, set to 1 
+                numberSplittingCheck=1;
+                console.log("in the if for NSC " + numberSplittingCheck);
+                return;
+	        } else if (isNaN(numberSplittingCheck)) {
+                numberSplittingCheck=1;
+                console.log("in the elseif for NSC " + numberSplittingCheck);
+                return;
+                } else {
+                return;
+	        } //end if stmnts
     	} // end valNSC
 
         var audio = new Audio('Cash Register Cha Ching-SoundBible.mp3'); // identify audio file
