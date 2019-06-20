@@ -1,4 +1,4 @@
-Challenge-Calculator
+<h1>Challenge-Calculator</h1>
 
 This is my front-end Javascript version of an application to calculate a percentage-based tip for a server. As per the <strong>rules and requirements it:</strong>
 
@@ -45,3 +45,5 @@ AND:
 <li>Cash register sound when Calculate Please is clicked. 
 <li>Calculator can be used on a mobile phone.
 </ul>
+ 
+<img src="appResults.jpg" alt="screenshot of results">
