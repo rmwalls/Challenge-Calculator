@@ -46,4 +46,4 @@ AND:
 <li>Calculator can be used on a mobile phone.
 </ul>
  
-<img src="appResults.jpg" alt="screenshot of results">
+<img src="images/appResults.jpg" alt="screenshot of results">
