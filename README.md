@@ -1,6 +1,6 @@
+Challenge-Calculator
 
-
-This is my front-end Javascript version of an application to calculate a percentage-based tip for a server. As per the <bold>rules and requirements it:</bold>
+This is my front-end Javascript version of an application to calculate a percentage-based tip for a server. As per the <strong>rules and requirements it:</strong>
 
 * Takes in the value of the bill
 
@@ -19,25 +19,29 @@ AND:
 
 * The returned value is a float rounded to two decimal points (i.e. accurate dollars and cents).
 
+<img src="images/app.jpg" alt="screenshot of app">
 
+<strong>How it works:</strong>
+<ol>
+<li>Enter the total amount of the bill that you want included in the tip calculation. In other words, if you want to pay tip based on the whole bill, include the whole amount. You can optionally enter the pre-tax amount, or any amount you choose. 
 
-<bold>How it works:</bold>
+<li>Unless you change the percentage, via the drop-down menu, the tip percentage will be 20%.
 
-Enter the total amount of the bill that you want included in the tip calculation. In other words, if you want to pay tip based on the whole bill, include the whole amount. You can optionally enter the pre-tax amount, or any amount you choose. 
+<li>If you are not splitting the bill, you can leave the last field blank. Otherwise, enter how many people will split the bill. 
 
-Unless you change the percentage, via the drop-down menu, the tip percentage will be 20%.
+<li>Click the Calculate Please button. See your results!
 
-If you are not splitting the bill, you can leave the last field blank. Otherwise, enter how many people will split the bill. 
+<li>If at any point you want to start over, click the Reset button.
+</ol>
 
-Click the Calculate Please button. See your results!
-
-If at any point you want to start over, click the Reset button.
-
-<bold>Additional features:</bold>
-
-<em>Data validation:</em>
-	Bill total can not be zero, a negative number, blank or text. If these entries are submitted, an error will display. 
-	The number splitting the check can not be zero, a negative number or text. These entries bill be changed to 1. 
-Logic used to display "person" or "people" as appropriate in the response.
-Cash register sound when Calculate Please is clicked. 
-Calculator can be used on a mobile phone.
+<strong>Additional features:</strong>
+<ul>
+<li><em>Data validation:</em>
+<ul>
+<li>Bill total can not be zero, a negative number, blank or text. If these entries are submitted, an error will display. 
+<li>The number splitting the check can not be zero, a negative number or text. These entries bill be changed to 1. 
+</ul>
+<li>Logic used to display "person" or "people" as appropriate in the response.
+<li>Cash register sound when Calculate Please is clicked. 
+<li>Calculator can be used on a mobile phone.
+</ul>
