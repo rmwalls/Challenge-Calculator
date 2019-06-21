@@ -13,7 +13,7 @@ $(document).ready(function () {
     var numberSplittingCheck=parseFloat("1");
     var amountEach;
     
-    //on button click do the math and display the results
+    //on calculate button click do the math and display the results
     const myButton = document.querySelector("#calculate"); 
 
     // calculate the numbers
@@ -87,7 +87,10 @@ $(document).ready(function () {
 	        } //end if stmnts
     	} // end valNSC
 
-        var audio = new Audio('Cash Register Cha Ching-SoundBible.mp3'); // identify audio file
-        $('#calculate').click( () => audio.play() ); // play it when button is clicked
+        const audio = new Audio('Cash Register Cha Ching-SoundBible.mp3'); // identify audio file
+        $('#calculate').click( () => audio.play() ); // play when calculate button is clicked
+
+        const audio2 = new Audio('Swoosh 1-SoundBible.mp3'); // identify audio file
+        $('#reset').click( () => audio2.play() ); // play it when clear button is clicked
 
 }) // end document ready

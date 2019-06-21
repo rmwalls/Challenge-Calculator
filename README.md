@@ -43,6 +43,8 @@ AND:
 </ul>
 <li>Logic used to display "person" or "people" as appropriate in the response.
 <li>Cash register sound when Calculate Please is clicked. 
+<li>Swoosh sound when Reset is clicked.
+<li> If only a whole number is entered, decimal is assumed. If more than 2 numbers entered after the decimal, rounding occurs.
 <li>Calculator can be used on a mobile phone.
 </ul>
  
