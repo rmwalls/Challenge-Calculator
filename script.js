@@ -1,7 +1,3 @@
-// need to 
-//      default number of people to split the bill by if not entered
-//      
-
 // make sure document is ready
 $(document).ready(function () {    
     
