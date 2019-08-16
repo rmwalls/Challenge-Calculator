@@ -1,6 +1,6 @@
 <h1>Challenge-Calculator</h1>
 
-This is my front-end Javascript version of an application to calculate a percentage-based tip for a server. As per the <strong>rules and requirements it:</strong>
+This is my entry into a contest to make a front-end Javascript version of an application to calculate a percentage-based tip for a server. It was an extra project outside the class. As per the <strong>rules and requirements it:</strong>
 
 * Takes in the value of the bill
 
